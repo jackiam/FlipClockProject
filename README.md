@@ -1,2 +1,1 @@
-# FlipClockProject
-This is code for my Flip Clock project. I am restoring a Soundesign 3464 with an arduino r4 wifi and a stepper motor. Various other little tweaks and tools will be included.
+This is the code for my Flip Clock project. I am retrofitting a Soundesign 3464 with an arduino r4 wifi and a stepper motor. Various other little tweaks and will be included. The best code block to use for keeping time is Modified Working Clock. This implementeed things that I should have originally added to WorkingClock. Take a look at the code to make sense of it. The comments hopefully will be helpful.
