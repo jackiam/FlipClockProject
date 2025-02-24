@@ -82,7 +82,7 @@
     <div class="container content-section">
         <section id="hardware" class="mb-5">
             <h2>Hardware</h2>
-            <p>The clock used in this project is an old Soundesign 3464 flip clock. To modernize it, I used an Arduino R4 WiFi as the main microcontroller, a NEMA 17 stepper motor to drive the flipping mechanism, and an L298N H-Bridge motor controller to handle the motor power. The wiring connects the stepper motor to the Arduino through the L298N module.</p>
+            <p>The clock used in this project is an old Soundesign 3464 flip clock. To modernize it, I used an Arduino R4 WiFi as the main microcontroller, a NEMA 17 stepper motor to drive the flipping mechanism, and an L298N H-Bridge motor controller to drive the NEMA 17.</p>
             <ul>
                 <li>Old Flip Clock (Soundesign 3464)</li>
                 <li>Arduino R4 WiFi - <a href="https://store-usa.arduino.cc/collections/boards-modules/products/uno-r4-wifi" target="_blank">arduino.cc</a></li>
@@ -94,7 +94,7 @@
         <h2>Build Process</h2>
         <ol>
             <h5>Was it worth it to upgrade my clock?</h5>
-            <p>Absolutely! The clock radio I used was not in working condition. The clock didn't work, nor did the radio. For me this clock was the perfect candidate for an upgrade. I did have to salvage 3 pieces from the original clock gearbox, the drive pinion and 2 sleeves for the drive pinion.</p>
+            <p>Absolutely! The clock radio I used was not in working condition. The clock didn't work, nor did the radio. For me this clock was the perfect candidate for a conversion. I did have to salvage 3 pieces from the original clock gearbox, the drive pinion and 2 sleeves for the drive pinion.</p>
             <h5>Installing the stepper motor</h5>
             <p> Installing the stepper motor required a little bit of experimentation. It was difficult to mount the motor using the original motor mount, but it was the sturdiest place to mount the motor. I designed and 3d printed a bracket that the motor could mount to using the existing motor mount standoffs. I also 3d printed two sleeves that would act as spacers for the motor mount. I printed a length of sleeve, then cut the sleeve to the appropriate length based on fit. By no means was this the perfect or best solution, but it was the best design for not totally disassembling and risk breaking the original clock mechanism.</p>
             <h5>Wiring the Arduino, Motor Driver and LED's.</h5>
@@ -109,8 +109,8 @@
 
     <section id="troubleshooting" class="content-section mb-5">
         <h5>Troubleshooting</h5>
-        <p>The majority of my troubleshooting was trying to make the motor smooth and quiet. If the stepper motor is jittery or too loud, try adjusting the step delay and checking power connections. I will say this was the best place to use an LLM (Large Language Model). Finding the correct step sequence can be a bit tricky if not time consuming. The LLM made this much quicker. The rest of the troubleshooting involved the NTP server. For me, Serial.print("printXYZ"); was the most helpful tool. It enabled me to see what code was being performedand when.</p><p>The majority of my troubleshooting was trying to make the motor smooth and quiet. If the stepper motor is jittery or too loud, try adjusting the step delay and checking power connections. I will say this was the best place to use an LLM (Large Language Model). Finding the correct step sequence can be a bit tricky if not time consuming. The LLM made this much quicker. The rest of the troubleshooting involved the NTP server. For me, Serial.print("printXYZ"); was the most helpful tool. It enabled me to see what code was being performedand when.</p>
-            <h5>Regardless of whether you read everything above this, you should check out this YouTube video, it explains everything a little bit better.</h5>
+        <p>The majority of my troubleshooting was trying to make the motor smooth and quiet. If the stepper motor is jittery or too loud, try adjusting the step delay and checking power connections. I will say this was the best place to use an LLM (Large Language Model). Finding the correct step sequence can be a bit tricky if not time consuming. The LLM made this much quicker. The rest of the troubleshooting involved the NTP server. For me, Serial.print("printXYZ"); was the most helpful tool. It enabled me to see what code was being performedand when.</p>
+            <h5>Regardless of whether you read everything above this, you should check out this YouTube video, it explains most of everything a little bit better.</h5>
             <div class="text-center">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/gb0Xb5sGYLk" frameborder="0" allowfullscreen></iframe>
             </div>
