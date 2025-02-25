@@ -42,7 +42,9 @@ Result 15. It seems to be very consistent and not skipping time. Lets try over 1
 
 Test 16. Removed Serial.print(); to clean up serial. Now testing 1 real hour starting at 3:24 pm
 
-Result 16.
+Result 16. Works well. keeps time, but second drift due to inaccuracies with onboard RTC.
+
+Test 17. Update time at the start of every hour to eliminate RTC inaccuracies.
 
 
 
