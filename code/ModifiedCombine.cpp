@@ -163,7 +163,7 @@ int mod60 = count % 60;
     *stepptr = 16;
   }
   // Step the motor stepptr times smoothly.
-  if(currentSecond == 0){              //uncomment after test 14
+  if(currentSecond == 0){       
     for (int i = 0; i < *stepptr; i++) {  //edited after
       stepMotor();
       delayMicroseconds(2000);      // Smooth movement with precise delay
@@ -171,7 +171,11 @@ int mod60 = count % 60;
     Serial.print(steps);  
     count++;
     delay(1000);
-  }                                    //uncomment after test 14
+  }
+  //update time at every hour start
+  if(currentMinute == 0){
+  timeClient.forceUpdate();
+  }
   // Turning off motor to prevent overheating. This dramatically reduced motor and motor controller temps.
   // They are now about room temperature.
   disableMotor();
