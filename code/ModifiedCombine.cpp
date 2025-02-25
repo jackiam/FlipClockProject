@@ -140,21 +140,21 @@ if(currentSecond == 0){
   // This is not achievable with 200 steps per motor revolution (steps per rev may vary with motor type). 
   // So I make up for with 16-16-18.  
   //add 1 to count
-int mod3 = count % 3;
-int mod15 = count % 15;
-int mod60 = count % 60;
+int mod3 = count % 3; //Keeps track of every third minute.
+int mod15 = count % 15; //Keeps track of every fifteenth minute.
+int mod60 = count % 60; //Keeps track of every sixtieth minute.
 
-  if (mod3 == 0){ //Every third step adds 2 steps to make up for 0.666... steps needed.
-    *stepptr = 17;
+  if (mod3 == 0){        //Every third step adds 1 step(working on accuracy).
+    *stepptr = 17;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
   }
-  else if (mod15 == 0){ //probably not needed due to mod3 being below, but this code has near 100% accuracy, so I'm keeping it.
-    *stepptr = 20;//if fast LOWER if slow RAISE. After video, it started running slow, raised to rather than 18.
+  else if (mod15 == 0){  //Every fifteenth step adds 4 steps(working on accuracy).
+    *stepptr = 20;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
   }
-   else if (mod60 == 0){
-    *stepptr = 50;
+   else if (mod60 == 0){ //Every sixtieth step adds 34 steps(working on accuracy).
+    *stepptr = 50;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
   }
   else{
-    *stepptr = 16;
+    *stepptr = 16;       //Otherwise, set to normal steps.
   }
   // Step the motor stepptr times smoothly.
    if(currentSecond == 0){
