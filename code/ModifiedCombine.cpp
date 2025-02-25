@@ -151,7 +151,7 @@ int mod60 = count % 60;
     *stepptr = 20;//if fast LOWER if slow RAISE. After video, it started running slow, raised to rather than 18.
   }
    else if (mod60 == 0){
-    *stepptr = 34;
+    *stepptr = 50;
   }
   else{
     *stepptr = 16;
