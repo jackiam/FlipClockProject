@@ -141,13 +141,17 @@ if(currentSecond == 0){
   // So I make up for with 16-16-18.  
   //add 1 to count
 int mod3 = count % 3;
-int mod9 = count % 9;
+int mod15 = count % 15;
+int mod60 = count % 60;
 
-  if (mod9 == 0){ //probably not needed due to mod3 being below, but this code has near 100% accuracy, so I'm keeping it.
-    *stepptr = 18;//if fast LOWER if slow RAISE. After video, it started running slow, raised to 19 rather than 18.
-  }
   if (mod3 == 0){ //Every third step adds 2 steps to make up for 0.666... steps needed.
-    *stepptr = 18;
+    *stepptr = 17;
+  }
+  else if (mod15 == 0){ //probably not needed due to mod3 being below, but this code has near 100% accuracy, so I'm keeping it.
+    *stepptr = 20;//if fast LOWER if slow RAISE. After video, it started running slow, raised to rather than 18.
+  }
+   else if (mod60 == 0){
+    *stepptr = 34;
   }
   else{
     *stepptr = 16;
