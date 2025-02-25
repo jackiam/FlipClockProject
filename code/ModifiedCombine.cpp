@@ -140,31 +140,38 @@ if(currentSecond == 0){
   // This is not achievable with 200 steps per motor revolution (steps per rev may vary with motor type). 
   // So I make up for with 16-16-18.  
   //add 1 to count
-int mod3 = count % 3; //Keeps track of every third minute.
-int mod15 = count % 15; //Keeps track of every fifteenth minute.
-int mod60 = count % 60; //Keeps track of every sixtieth minute.
+int mod3 = count % 3;
+int mod15 = count % 15;
+int mod60 = count % 60;
 
-  if (mod3 == 0){        //Every third step adds 1 step(working on accuracy).
-    *stepptr = 17;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
-  }
-  else if (mod15 == 0){  //Every fifteenth step adds 4 steps(working on accuracy).
-    *stepptr = 20;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
-  }
-   else if (mod60 == 0){ //Every sixtieth step adds 34 steps(working on accuracy).
-    *stepptr = 50;       //Testing these numbers to increase accuracy, if fast LOWER if slow RAISE.
+  // if (mod60 == 0){ //Every third step adds 2 steps to make up for 0.666... steps needed.
+  //   *stepptr = 17;
+  //   Serial.print("mod60-");
+  //   Serial.println(mod60);
+  // }
+  // else if (mod15 == 0){ //probably not needed due to mod3 being below, but this code has near 100% accuracy, so I'm keeping it.
+  //   *stepptr = 20;//if fast LOWER if slow RAISE. After video, it started running slow, raised to rather than 18.
+  //   Serial.print("mod15-");
+  //   Serial.println(mod15);
+  // }
+  if (mod3 == 0){
+    *stepptr = 18;
+    // Serial.print("mod3-");
+    // Serial.println(mod3);
   }
   else{
-    *stepptr = 16;       //Otherwise, set to normal steps.
+    *stepptr = 16;
   }
   // Step the motor stepptr times smoothly.
-   if(currentSecond == 0){
+  if(currentSecond == 0){              //uncomment after test 14
     for (int i = 0; i < *stepptr; i++) {  //edited after
       stepMotor();
-      delayMicroseconds(2000);  // Smooth movement with precise delay
-      count++;
+      delayMicroseconds(2000);      // Smooth movement with precise delay
     }
+    Serial.print(steps);  
+    count++;
     delay(1000);
-   }
+  }                                    //uncomment after test 14
   // Turning off motor to prevent overheating. This dramatically reduced motor and motor controller temps.
   // They are now about room temperature.
   disableMotor();
