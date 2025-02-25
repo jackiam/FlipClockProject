@@ -24,9 +24,9 @@ Test 12. Adjusted if statements to properly adjust the time. Steps and count wil
 Result 12. At 1:30 pm, the clock lost 1 minute over the hour.
 
 Test 13. Add 1 additional minute (16 steps) to the end of each hour. This should fix the issue. 
-Test started at 1:35 pm.
+Test started at 1:38 pm.
 
-Result 13. 
+Result 13. At 2:38 pm,
 
 
 
