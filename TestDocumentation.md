@@ -23,10 +23,27 @@ Test 12. Adjusted if statements to properly adjust the time. Steps and count wil
 
 Result 12. At 1:30 pm, the clock lost 1 minute over the hour.
 
+
 Test 13. Add 1 additional minute (16 steps) to the end of each hour. This should fix the issue. 
 Test started at 1:38 pm.
 
-Result 13. At 2:38 pm,
+Result 13. At 2:38 pm, the clock lost 1 minute over the hour.
+
+
+Test 14. Using simulated time. Adding various Serial.print(); to see whats doing what. Each (simulated) minute is 1 second. Using this I should be able to see why its not off by 1 minute.
+
+Result 14. count++ was in the wrong location, the if, else if, else tree was also wrong. The tree never got to the higher values due to wron orientation.
+
+
+Test 15. Remove the higher value (mod15-mod60) if statements, go back to mod 3 at 18 and try again.
+
+Result 15. It seems to be very consistent and not skipping time. Lets try over 1 real hour.
+
+
+Test 16. Removed Serial.print(); to clean up serial. Now testing 1 real hour starting at 3:24 pm
+
+Result 16.
+
 
 
 
