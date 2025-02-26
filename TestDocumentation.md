@@ -44,7 +44,11 @@ Test 16. Removed Serial.print(); to clean up serial. Now testing 1 real hour sta
 
 Result 16. Works well. keeps time, but second drift due to inaccuracies with onboard RTC.
 
-Test 17. Update time at the start of every hour to eliminate RTC inaccuracies.
+Test 17. Update time at the start of every minute to eliminate RTC inaccuracies. Starting test at 3:33pm
+
+Result 17.
+
+
 
 
 
